@@ -1,0 +1,19 @@
+{
+  "name": "pay-ledger",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev:auth": "pnpm --filter svc-auth dev",
+    "dev:gateway": "pnpm --filter api-gateway dev",
+    "dev:accounts": "pnpm --filter svc-accounts dev",
+    "dev:invoices": "pnpm --filter svc-invoices dev",
+    "dev:settlement": "pnpm --filter svc-settlement dev",
+    "build:all": "pnpm -r build",
+    "infra:up": "docker compose up -d postgres redis rabbitmq",
+    "infra:down": "docker compose down",
+    "infra:logs": "docker compose logs -f"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}

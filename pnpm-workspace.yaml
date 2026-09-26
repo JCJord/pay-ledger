@@ -1,0 +1,13 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+
+# Pre-approve build scripts for packages that require native compilation
+# or post-install code generation (Prisma engines, Parcel watcher, etc.)
+allowBuilds:
+  "@parcel/watcher": true
+  "@prisma/client": true
+  "@prisma/engines": true
+  "@scarf/scarf": true
+  "prisma": true
+  "unrs-resolver": true
