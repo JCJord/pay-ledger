@@ -1,8 +1,8 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { AccountBalanceSnapshot, EntryType, Prisma } from '@prisma/client';
+import { EntryType, Prisma } from '@prisma/client-accounts';
 import { PrismaService } from 'prisma/prisma.service';
 import { BalanceResponseDto } from './dto/balance-response.dto';
-import { Decimal } from '@prisma/client/runtime/library';
+import { Decimal } from '@prisma/client-accounts/runtime/library';
 
 @Injectable()
 export class BalanceService {

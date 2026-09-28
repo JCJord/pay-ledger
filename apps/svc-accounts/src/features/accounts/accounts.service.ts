@@ -2,7 +2,7 @@ import { Injectable, Logger } from '@nestjs/common';
 import { PrismaService } from 'prisma/prisma.service';
 import { nanoid } from 'nanoid';
 import { CreateAccountDto } from './dto/create-account.dto';
-import { Account, AccountType } from '@prisma/client';
+import { Account, AccountType } from '@prisma/client-accounts';
 
 @Injectable()
 export class AccountsService {

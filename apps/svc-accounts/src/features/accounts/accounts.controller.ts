@@ -13,7 +13,7 @@ import { ApiHeader, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { AccountsService } from './accounts.service';
 import { BalanceService } from './balance.service';
 import { AccountResponseDto } from './dto/account-response.dto';
-import { Account } from '@prisma/client';
+import { Account } from '@prisma/client-accounts';
 import { plainToInstance } from 'class-transformer';
 import { OwnershipGuard } from './guards/ownership.guard';
 import { BalanceResponseDto } from './dto/balance-response.dto';
