@@ -71,6 +71,26 @@ services:
     profiles:
       - apps
 
+  svc-accounts:
+    build:
+      context: .
+      dockerfile: apps/svc-accounts/Dockerfile
+    container_name: payledger-svc-accounts
+    ports:
+      - "3002:3002"
+    environment:
+      PORT: 3002
+      DATABASE_URL: "postgresql://postgres:postgrespassword@postgres:5432/payledger_accounts"
+      RABBITMQ_URI: "amqp://guest:guest@rabbitmq:5672"
+      INTERNAL_API_KEY: "internal-secret-key-change-in-prod"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    profiles:
+      - apps
+
   # api-gateway:
   #   build:
   #     context: .
